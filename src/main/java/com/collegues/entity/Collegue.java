@@ -26,8 +26,19 @@ public class Collegue {
 	@Column(name = "PHOTO")
 	private String photo;
 
-	@Column(name = "NOM", nullable = false)
+	@Column(name = "PSEUDO")
+	private String pseudo;
+	@Column(name = "NOM")
 	private String nom;
+
+	@Column(name = "PRENOM")
+	private String prenom;
+
+	@Column(name = "ADRESSE")
+	private String adresse;
+
+	@Column(name = "EMAIL")
+	private String email;
 
 	@Column(name = "NOTE")
 	private Integer note;
@@ -36,10 +47,21 @@ public class Collegue {
 
 	}
 
-	public Collegue(String photo, String nom) {
+	public Collegue(String photo, String pseudo) {
 		this.photo = photo;
-		this.nom = nom;
+		this.pseudo = pseudo;
 		this.note = 0;
+	}
+
+	public Collegue(String photo, String pseudo, String nom, String prenom, String email, String adresse) {
+		this.photo = photo;
+		this.pseudo = pseudo;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.adresse = adresse;
+		this.note = 0;
+
 	}
 
 	/**
@@ -55,6 +77,21 @@ public class Collegue {
 	 */
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	/**
+	 * @return the pseudo
+	 */
+	public String getPseudo() {
+		return pseudo;
+	}
+
+	/**
+	 * @param pseudo
+	 *            the pseudo to set
+	 */
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
 	}
 
 	/**
@@ -102,9 +139,55 @@ public class Collegue {
 		this.note = note;
 	}
 
+	/**
+	 * @return the prenom
+	 */
+	public String getPrenom() {
+		return prenom;
+	}
+
+	/**
+	 * @param prenom
+	 *            the prenom to set
+	 */
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	/**
+	 * @return the adresse
+	 */
+	public String getAdresse() {
+		return adresse;
+	}
+
+	/**
+	 * @param adresse
+	 *            the adresse to set
+	 */
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email
+	 *            the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
-		return "Collegue [id=" + id + ", photo=" + photo + ", nom=" + nom + ", note=" + note + "]";
+		return "Collegue [id=" + id + ", photo=" + photo + ", pseudo=" + pseudo + ", nom=" + nom + ", prenom=" + prenom
+				+ ", adresse=" + adresse + ", email=" + email + ", note=" + note + "]";
 	}
 
 }

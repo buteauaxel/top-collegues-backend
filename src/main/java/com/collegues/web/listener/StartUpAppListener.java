@@ -38,7 +38,7 @@ public class StartUpAppListener {
 				.add(new Collegue("http://fr.web.img6.acsta.net/c_400_200/newsv7/17/05/16/10/59/480832.jpg", "César"));
 		listeCollegue
 				.add(new Collegue("https://jesavaispas.com/wp-content/uploads/2016/03/Koala-400x200.jpg", "Koala"));
-		listeCollegue.add(new Collegue("https://dkm-tv.com/wp-content/uploads/2015/04/bonobo-400x200.jpg", "Singe"));
+		listeCollegue.add(new Collegue("https://dkm-tv.com/wp-content/uploads/2015/04/bonobo-400x200.jpg", "Emmanuel"));
 		listeCollegue.add(new Collegue(
 				"https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29582080%2F144893382253%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C49%2C2048%2C1024&s=94fe34b3820a5787d978c83988785dd8",
 				"Capucin"));

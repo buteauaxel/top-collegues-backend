@@ -36,10 +36,11 @@ public class CollegueController {
 		return this.collegueR.findAll();
 	}
 
-	@RequestMapping(value = "/{nom}", method = RequestMethod.PATCH)
-	public void modifNote(@PathVariable String nom, @RequestBody ActionIhm action) {
-		if (collegueR.existsByNom(nom)) {
-			Collegue c1 = collegueR.findCollegueByNom(nom);
+	@RequestMapping(value = "/{pseudo}", method = RequestMethod.PATCH)
+	public Collegue modifNote(@PathVariable String pseudo, @RequestBody ActionIhm action) {
+		Collegue c1 = new Collegue();
+		if (collegueR.existsByPseudo(pseudo)) {
+			c1 = collegueR.findCollegueByPseudo(pseudo);
 
 			if (action.getAction().equals(Avis.AIMER)) {
 				Integer note = c1.getNote();
@@ -47,10 +48,17 @@ public class CollegueController {
 			}
 			if (action.getAction().equals(Avis.DETESTER)) {
 				Integer note = c1.getNote();
-				c1.setNote(note -= 10);
+				c1.setNote(note -= 5);
 			}
 			this.collegueR.save(c1);
 
 		}
+		return c1;
 	}
+
+	@RequestMapping(value = "/{pseudo}", method = RequestMethod.GET)
+	public Collegue find(@PathVariable String pseudo) {
+		return collegueR.findCollegueByPseudo(pseudo);
+	}
+
 }

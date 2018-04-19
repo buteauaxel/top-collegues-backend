@@ -13,7 +13,7 @@ import com.collegues.entity.Collegue;
  */
 public interface CollegueRepository extends JpaRepository<Collegue, Integer> {
 
-	Boolean existsByNom(String nom);
+	Boolean existsByPseudo(String pseudo);
 
-	Collegue findCollegueByNom(String nom);
+	Collegue findCollegueByPseudo(String pseudo);
 }
