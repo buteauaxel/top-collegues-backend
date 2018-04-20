@@ -136,7 +136,14 @@ public class Collegue {
 	 *            the note to set
 	 */
 	public void setNote(Integer note) {
-		this.note = note;
+		if (note > 1000) {
+			this.note = 1000;
+		} else if (note <= -1000) {
+			this.note = -1000;
+		} else {
+
+			this.note = note;
+		}
 	}
 
 	/**

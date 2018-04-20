@@ -43,8 +43,7 @@ public class CollegueController {
 			c1 = collegueR.findCollegueByPseudo(pseudo);
 
 			if (action.getAction().equals(Avis.AIMER) && c1.getNote() < 1000) {
-				Integer note = c1.getNote();
-				c1.setNote(note += 10);
+				c1.setNote(c1.getNote() + 10);
 			}
 			if (action.getAction().equals(Avis.DETESTER) && c1.getNote() > -1000) {
 				Integer note = c1.getNote();
