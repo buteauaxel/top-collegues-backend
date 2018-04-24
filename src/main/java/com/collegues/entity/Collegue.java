@@ -23,6 +23,9 @@ public class Collegue {
 	@Column(name = "ID")
 	private Integer id;
 
+	@Column(name = "MATRICULE")
+	private String matricule;
+
 	@Column(name = "PHOTO")
 	private String photo;
 
@@ -53,8 +56,10 @@ public class Collegue {
 		this.note = 0;
 	}
 
-	public Collegue(String photo, String pseudo, String nom, String prenom, String email, String adresse) {
+	public Collegue(String photo, String matricule, String pseudo, String nom, String prenom, String email,
+			String adresse) {
 		this.photo = photo;
+		this.matricule = matricule;
 		this.pseudo = pseudo;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -77,6 +82,21 @@ public class Collegue {
 	 */
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	/**
+	 * @return the matricule
+	 */
+	public String getMatricule() {
+		return matricule;
+	}
+
+	/**
+	 * @param matricule
+	 *            the matricule to set
+	 */
+	public void setMatricule(String matricule) {
+		this.matricule = matricule;
 	}
 
 	/**
@@ -193,8 +213,8 @@ public class Collegue {
 
 	@Override
 	public String toString() {
-		return "Collegue [id=" + id + ", photo=" + photo + ", pseudo=" + pseudo + ", nom=" + nom + ", prenom=" + prenom
-				+ ", adresse=" + adresse + ", email=" + email + ", note=" + note + "]";
+		return "Collegue [id=" + id + ", matricule=" + matricule + ", photo=" + photo + ", pseudo=" + pseudo + ", nom="
+				+ nom + ", prenom=" + prenom + ", adresse=" + adresse + ", email=" + email + ", note=" + note + "]";
 	}
 
 }
